@@ -160,7 +160,7 @@ function mutemusic() {
         }, 50);
     } else {
         let targetVolume = previousVolume;
-        const step = targetVolume / 20;
+        const step = targetVolume / 10;
 
         transitionInterval = setInterval(() => {
             currentValue += step;

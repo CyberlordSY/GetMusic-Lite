@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetMusic</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/utility.css">
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="header">
+            <div class="nav flex">
+                <img src="assets/logo/Logo circle.png" alt="" srcset="">
+                <h1>GetMusic</h1>
+            </div>
+        </div>
+        <div class="content flex">
+            <div class="library bg-grey rounded">
+                <div class="heading">
+                    <img src="assets/svg/music.svg" alt="" srcset="">
+                    <h2 class="nameofsong" id="nameofsong"></h2>
+                </div>
+                <div class="songList">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right bg-grey rounded">
+
+                <div class="getmusicPlaylist">
+                    <h1>GetMusic-playlist</h1>
+                    <div class="cardContainer">
+                    </div>
+                    <div class="playbar">
+                        <div class="seekbarPosition">
+                            <div class="seekbar">
+                                <div class="circle"></div>
+                            </div>
+                        </div>                        
+                        <div class="abovebar">
+                            <div class="songinfo"></div>
+                            <div class="songButtons">
+                                <img id="prev" src="assets/svg/prev.svg" alt="" srcset="">
+                                <img id="play" src="assets/svg/play.svg" alt="" srcset="">
+                                <img id="next" src="assets/svg/next.svg" alt="" srcset="">
+                            </div>
+                            <div class="timevolume">
+                                <div class="songtime"></div>
+                                <div class="volume">
+                                    <div class="imagevol">
+                                        <img id="volumeIcon" src="assets/svg/volume.svg" alt="Volume">
+                                    </div>
+                                    <div class="volumeControl"> 
+                                        <input type="range" class="volumeSlider" id="volumeSlider" value="100" min="0" max="100" step="1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -260,10 +260,19 @@ async function main() {
     });
 
     prev.addEventListener("click", () => {
+        const now = Date.now();
         const current = decodeURIComponent(currentSong.src.split("/").pop());
         const index = currentSongList.indexOf(current);
-        const prevIndex = index > 0 ? index - 1 : currentSongList.length - 1;
-        playMusic(currentSongList[prevIndex], currentSongFolder, currentSongList, false, false);
+
+        if (now - lastPrevPressTime < 2000) {
+            const prevIndex = index > 0 ? index - 1 : currentSongList.length - 1;
+            playMusic(currentSongList[prevIndex], currentSongFolder, currentSongList, false, false);
+        } else {
+            currentSong.currentTime = 0;
+            currentSong.play();
+        }
+
+        lastPrevPressTime = now;
     });
 
     let lastPrevPressTime = 0;

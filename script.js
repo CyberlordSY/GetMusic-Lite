@@ -225,6 +225,7 @@ async function main() {
     const random = folders[Math.floor(Math.random() * folders.length)];
     await getSongs("Songs/" + random);
     document.getElementById("nameofsong").textContent = random;
+    document.title = `GetMusic - ${random}`;
 
     if (songs.length > 0) {
         playMusic(songs[0], currFolder, songs, true, false);

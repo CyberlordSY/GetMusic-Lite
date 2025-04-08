@@ -45,7 +45,8 @@ function updateSongListUI(songs, folder) {
         ul.innerHTML += `
             <li>
                 <div class="playNow">
-                    <img src="assets/svg/${isPlaying ? "playingsong" : "play"}.svg" alt="">
+                    <img id="musicPlayingGif" class="${isPlaying ? 'gif' : 'svg'}" src="${isPlaying ? 'assets/gif/musicplaying.gif' : 'assets/svg/play.svg'}" alt="Music Status">
+
                 </div>
                 <div class="info">${song.replace(".mp3", "")}</div>
             </li>`;
@@ -62,13 +63,21 @@ function updatePlayingIcon() {
     document.querySelectorAll(".songList li").forEach(li => {
         const infoText = li.querySelector(".info").textContent;
         const playImg = li.querySelector(".playNow img");
+
         if (infoText === playingSong) {
-            playImg.src = "assets/svg/playingsong.svg";
+            playImg.src = "assets/gif/musicplaying.gif";
+            playImg.id = "musicPlayingGif";
+            playImg.className = "gif";
+            console.log("gif");
         } else {
             playImg.src = "assets/svg/play.svg";
+            playImg.removeAttribute("id");
+            playImg.className = "svg";
+            console.log("svg");
         }
     });
 }
+
 
 function playMusic(songName, folder, songList, pause = false, shouldUpdateUI = false) {
     if (!songName) return;
@@ -135,6 +144,7 @@ async function displayAllAlbums() {
         card.addEventListener("click", async () => {
             const folder = "Songs/" + card.dataset.folder;
             document.getElementById("nameofsong").textContent = folder.split("/")[1];
+            document.title = `GetMusic - ${folder.split("/")[1]}`;
             await getSongs(folder);
         });
     });

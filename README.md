@@ -21,3 +21,11 @@
 1. **Clone or Download**  
    ```bash
    git clone https://github.com/CyberlordSY/GetMusic-Lite.git
+   cd GetMusic-Lite
+   ```
+
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

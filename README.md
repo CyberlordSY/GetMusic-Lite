@@ -18,7 +18,6 @@
 
 ## 🚀 Getting Started
 
-  **Clone or Download**  
    ```bash
    git clone https://github.com/CyberlordSY/GetMusic-Lite.git
    cd GetMusic-Lite
